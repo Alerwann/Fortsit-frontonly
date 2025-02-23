@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+  margin: 0;
+  padding: 0;
+}
+html, body {
+    height: 100%;
+ 
+  }
+body{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: rgb(182, 238, 231);
+}
+
+app-root{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.contenaire{
+  flex: 1;
+  display: grid;
+  grid-template-rows: auto 0 1fr auto;
+}

@@ -1,1 +1,25 @@
-<p>header works!</p>
+<header>
+  <h1 class="jaini-purva-regular">Fortquest</h1>
+  <nav>
+    <!-- <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a> -->
+
+    <button
+      mat-button
+      routerLink=""
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+     Accueil
+    </button>
+    <button mat-button routerLink="quetes">Quêtes</button>
+   
+
+    <!-- <button mat-button routerLink="meme" routerLinkActive="active">
+      Memes
+    </button> -->
+
+    <button mat-button routerLink="quizz" routerLinkActive="active">
+      Quizz
+    </button>
+  </nav>
+</header>
