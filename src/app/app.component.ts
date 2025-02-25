@@ -13,6 +13,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export default class AppComponent {
+  title: any;
 
   
 }

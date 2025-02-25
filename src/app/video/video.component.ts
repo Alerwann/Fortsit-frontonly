@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { Video } from '../models/video.model';
 import { videoService } from '../service/video.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-video',
@@ -13,9 +14,22 @@ import { videoService } from '../service/video.service';
 export class VideoComponent implements OnInit {
 
   videos:Video[]=[]
-  constructor(private videoservice: videoService){}
+  filterdvideo: Video[]=[]
+  constructor(private videoservice: videoService, private sanitizer : DomSanitizer){}
 
  ngOnInit(): void {
-   this.videos=this.videoservice.getAllQuest()
+   this.filterdvideo=this.videoservice.getAllQuest()
  }
+ getSafeUrl(url: string): SafeResourceUrl {
+     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+   }
+
+   Onclick(type:string):void{
+    if(type==='all'){
+      this.filterdvideo=this.videoservice.getAllQuest()
+    }else this.filterdvideo=this.videoservice.getOnetypeQuest(type)
+
+
+
+   }
 }
