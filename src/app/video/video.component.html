@@ -1,0 +1,30 @@
+
+<div class="contenair-choice">
+    <button
+    mat-button
+  >
+    Toutes les vidéos
+  </button>
+    <button
+      mat-button
+    >
+     Vidéos drôles
+    </button>
+
+    <button
+      mat-button
+    >
+      Astuces secrètes
+    </button>
+    <button
+      mat-button
+    >
+      Edits
+    </button>
+
+  </div>
+
+
+  <div *ngFor="let video of videos">
+  {{ video.Titres }}
+  </div>

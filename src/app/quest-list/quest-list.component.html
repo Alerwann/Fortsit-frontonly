@@ -1,45 +1,17 @@
+<div class="contenair-choice">
+  <button mat-button (click)="onLinkClick('all')">Ensemble des quêtes</button>
 
-  <div class="contenair-choice">
-    <button
-      mat-button
-      routerLink="allquest"
-      routerLinkActive="active"
-      (click)="onLinkClick('all')"
-    >
-      Ensemble des quêtes
-    </button>
-
-    <button
-      mat-button
-      routerLink="allquest"
-      routerLinkActive="active"
-      (click)="onLinkClick('hebdo')"
-    >
-      Quêtes Hebdos
-    </button>
-    <button
-      mat-button
-      routerLink="allquest"
-      routerLinkActive="active"
-      (click)="onLinkClick('histoire')"
-    >
-      Quêtes d'Histoire
-    </button>
-    <button
-      mat-button
-      routerLink="allquest"
-      routerLinkActive="active"
-      (click)="onLinkClick('event')"
-    >
-      Quêtes d'Event
-    </button>
-  </div>
-  <div class="contenair">
+  <button mat-button (click)="onLinkClick('hebdo')">Quêtes Hebdos</button>
+  <button mat-button (click)="onLinkClick('histoire')">
+    Quêtes d'Histoire
+  </button>
+  <button mat-button (click)="onLinkClick('event')">Quêtes d'Event</button>
+</div>
+<div class="contenair">
   <div *ngIf="choice === 0 || choice === 1">
     <table>
       <thead>
         <tr>
-        
           <th class="semaine">Semaines</th>
           <th class="videos">Vidéos</th>
           <th class="desc">Descriptions des quêtes</th>
@@ -52,7 +24,6 @@
           *ngFor="let quetes of filteredQuests; let i = index"
           [class.paire]="i % 2 === 0"
         >
-          
           <td>{{ quetes.date }}</td>
           <td>
             <iframe
@@ -78,7 +49,7 @@
 
   <div *ngIf="choice === 2" class="faux">
     Pas de quêtes pour le moment dans cette catégorie
-    <br>
-    <img src="assets/logo trist.png" alt="logo triste">
+    <br />
+    <img src="assets/logo trist.png" alt="logo triste" />
   </div>
 </div>
